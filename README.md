@@ -1,6 +1,6 @@
 ## Preview
 
-![Résumé](resume/cv.pdf)
+![Resume](resume/preview/cv.png)
 
 This resume used the **YAAC: Another Awesome CV** template
 
