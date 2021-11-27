@@ -1,13 +1,22 @@
-YAAC: Another Awesome CV [![CircleCI](https://circleci.com/gh/darwiin/yaac-another-awesome-cv.svg?style=svg)](https://circleci.com/gh/darwiin/yaac-another-awesome-cv) [![Example](https://img.shields.io/badge/Exemple-pdf-blue.svg)](https://github.com/darwiin/yaac-another-awesome-cv/releases/download/v1.8.0/cv.pdf)
-=================
+## Preview
+
+![Résumé](resume/cv.pdf)
+
+This resume used the **YAAC: Another Awesome CV** template
 
 ## Quick start
 
 You can edit online **YAAC: Another Awesome CV** template on [Overleaf](https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw). Feel free to use my [referal link](https://www.overleaf.com/signup?ref=54c221604cd6) if you want to create your account.
 
+## Instructions for local build
+
+`brew install --cask mactex-no-gui`
+Install the LaTeX Workshop vs code extension.
+copy settings from `vs_code_settings.json` into the vs code user settings file. (cmd+shift+p > Preferences: Open Settings (JSON))
+
 ## About
 
-**YAAC: Another Awesome CV** was first based on a CV template from Alessandro Plasmati. This template used _XeLaTeX_ engine and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font. 
+**YAAC: Another Awesome CV** was first based on a CV template from Alessandro Plasmati. This template used _XeLaTeX_ engine and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font.
 
 **Personal data** has moved on top of the first page just before the position and _[Fontin Sans](http://www.exljbris.com/fontinsans.html)_ font has been replaced by _[Source Sans Pro Font](https://github.com/adobe-fonts/source-sans-pro)_ from Adobe. _[Font Awesome](http://fontawesome.io/)_ icons highlight important elements.
 
@@ -15,54 +24,38 @@ Unlike _Alessandro Plasmati_ CV template, all layout stuff in **YAAC: Another Aw
 
 More informations about the original Alessandro Plasmati template can be found here :
 
-   -  [ Scribd ](http://fr.scribd.com/doc/16335667/Writing-your-Professional-CV-with-LaTeX)
-   -  [ LaTeX Templates ](http://www.latextemplates.com/template/plasmati-graduate-cv)
-   -  [ ShareLatex ](https://www.sharelatex.com/templates/cv-or-resume/professional-cv)
-
-## Preview
-
-### Normal style
-
-| Page. 1 | Page. 2 |
-|:---:|:---:|
-| ![Résumé](example/preview/cv1.jpeg) | ![Résumé](example/preview/cv2.jpeg) |
-
-### Alternative style
-
-| Page. 1 | Page. 2 |
-|:---:|:---:|
-| ![Résumé](example/preview/cv1-alternative.jpeg) | ![Résumé](example/preview/cv2-alternative.jpeg) |
-
-## How to use **YAAC: Another Awesome CV** latex class
+- [ Scribd ](http://fr.scribd.com/doc/16335667/Writing-your-Professional-CV-with-LaTeX)
+- [ LaTeX Templates ](http://www.latextemplates.com/template/plasmati-graduate-cv)
+- [ ShareLatex ](https://www.sharelatex.com/templates/cv-or-resume/professional-cv)
 
 ### Use the **YAAC: Another Awesome CV** options
 
 When declaring the `\documentclass` you can use option(s) to customize your CV rendering.
+
 1. **localFont** to use the fonts included in the _fonts_ folder
 2. **alternative** to use the _alternative header_ layout
 3. **10pt** or **11pt** or **12pt** to change the font size
 4. **compact** to reduce vertical space between you experience entries
 
-
 ```latex
-% Used with no option, the template will use the 'traditional' 
+% Used with no option, the template will use the 'traditional'
 % header layout your system fonts and the default color scheme ie. blue
 \documentclass{yaac-another-awesome-cv}
 
-% Used with localFont option the template will use the 'traditional' 
+% Used with localFont option the template will use the 'traditional'
 % header layout, fonts included in the fonts directory and the default color scheme
 \documentclass[localFont]{yaac-another-awesome-cv}
 
-% Used with alternative option, the template will use the 'alternative' 
+% Used with alternative option, the template will use the 'alternative'
 % header layout, your system fonts and the default color scheme
 \documentclass[alternative]{yaac-another-awesome-cv}
 
-% Used with localFont, alternative and 10pt options the template will use the 'alternative' 
+% Used with localFont, alternative and 10pt options the template will use the 'alternative'
 % header layout, fonts included in the fonts directory, the default color scheme and the '10pt' font size.
 % Based on the article document class, size options are 10pt, 11pt and 12pt
 \documentclass[localFont,alternative,10pt]{yaac-another-awesome-cv}
 
-% Used with 'compact' option the template will use the compact experience layout 
+% Used with 'compact' option the template will use the compact experience layout
 % Feel free to use this option with the others that are available
 \documentclass[compact]{yaac-another-awesome-cv}
 
@@ -84,7 +77,7 @@ Outside of the `\socialinfo` wrapper you have to define the mandatory parameters
 \photo{2.5cm}{darwiin}
 
 % Define author's tagline
-% Usage: \tagline{<tag line>} 
+% Usage: \tagline{<tag line>}
 % Mandatory
 \tagline{Chef de projet IT}
 ```
@@ -148,7 +141,6 @@ Sections share the left column size (2.5cm by default). You can change this defa
 \setleftcolumnlength{1.5cm}
 ```
 
-
 ### Construct the _comptences_ or _skills_ section
 
 To list your awesome skills as keyword lists you first have to declare the `keywords` environment and then fill it with a list of keywordsentry
@@ -156,7 +148,7 @@ To list your awesome skills as keyword lists you first have to declare the `keyw
 ```latex
 % Begin a new keywords environment to show us your awesome keywords
   \begin{keywords}
-    
+
     % Here's go your keyword lists group by categories
     \keywordsentry{Frameworks}{Spring, Spring Boot, \textbf{Ionic 3}, Angular 2, Angular 4, ZK, JBoss RichFaces}
   \end{keywords}
@@ -176,7 +168,7 @@ To describe your experiences you have first to declare the `experiences` environ
 ```
 
 Then you can describe your experiences using **\experience** and **\consultantexperience** entries. Each
-entry must be separated by the **\emptyseparator** 
+entry must be separated by the **\emptyseparator**
 
 ```latex
 % Begin a new experiences environment to use experience and consultantexperience macro
@@ -198,7 +190,7 @@ entry must be separated by the **\emptyseparator**
 % The emptyseparator macro is used to create white space in your experience
   \emptySeparator
 
-% The consultantexperience macro is very similar to the experience macro, but offer you 
+% The consultantexperience macro is very similar to the experience macro, but offer you
 % the possibility tu put client details
   \consultantexperience
     {End date}        {Experience title}{Enterprise}{Country}
@@ -217,7 +209,7 @@ entry must be separated by the **\emptyseparator**
 
 ### Construct the _languages_ section
 
-The _languages_ section use the **skills** environment. 
+The _languages_ section use the **skills** environment.
 
 ```latex
 % Begin a new skills environment and fill it with skill entries
@@ -228,7 +220,7 @@ The _languages_ section use the **skills** environment.
     \skill{Français}{5}
     \skill{Anglais}{4}
 
-% End the skills environment    
+% End the skills environment
   \end{skills}
 ```
 
@@ -259,7 +251,7 @@ The _projects_ section use the **projects** environment.
     {\website{https://www.simplycity.nc}{https://www.simplycity.nc} \website{https://innovation.engie.com/fr/news/actus/territoires/simply-city-lappli-qui-simplifie-la-ville-au-ces-2018-avec-engie/8156}{Présentation CES 2018} }
     {Simply City est une application mobile, gratuite et participative destinée à tous les habitants, visiteurs et touristes qui séjournent dans une ville. L’application permet de connaître toutes les informations et services utiles en temps réel.}
     {Ionic 3,Typescript,Javascript,Visual Studio Code}
-        
+
 \end{projects}
 ```
 
@@ -295,7 +287,6 @@ Then you can list your references as follow:
 
   \begin{referees}
 ```
-
 
 ## License
 
