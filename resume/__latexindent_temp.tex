@@ -1,27 +1,47 @@
-%! TeX program = lualatex
-\documentclass[localFont,alternative,10pt,compact]{yaac-another-awesome-cv}
-\name{Matt}{Severini}
-\tagline{Senior Fullstack Software Engineer}
-% \photo{2.5cm}{darwiin}
-\socialinfo{
-	\linkedin{matthew-severini}
-	\github{mseverini}\\
-	\smartphone{+1 631 672 2083}
-	\email{matthew.severini@gmail.com}\\
-	\address{1060 Churchill Crescent, North Vancouver, BC V7P 0C8}\\
+% Awesome Source CV LaTeX Template
+%
+% This template has been downloaded from:
+% https://github.com/darwiin/awesome-neue-latex-cv
+%
+% Author:
+% Christophe Roger
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+
+%Section: Project
+% \sectionTitle{Projets}{\faLaptop}
+
+% \begin{projects}
+% 	\project
+% 	{}{2020}
+% 	{\website{https://www.simplycity.nc}{https://www.simplycity.nc}}
+% 	{}
+% 	{Ionic 3,Typescript,Javascript,Visual Studio Code}
+				
+% 	\project
+% 	{YAAC Another Awesome CV}{2013 - 2018}
+% 	{\github{darwiin/yaac-another-awesome-cv} \website{https://www.overleaf.com/latex/templates/awesome-source-cv/wrdjtkkytqcw}{Template sur Overleaf}}
+% 	{Template \LaTeX pour Curiculum Vitæ utilisant les icônes \href{https://fontawesome.com}{Font Awesome} et la police de caractère \href{https://fonts.google.com/specimen/Source+Sans+Pro}{Adobe Source Sans Pro}. YAAC Another Awesome CV a d'abord été créé comme un template simple pour CV à vocation technologique.}
+% 	{\LaTeX,Sublime Text}
+
+% \end{projects}
+
+\sectionTitle{Projects}{\faLaptop}
+\twocolumnsection{
+	\begin{projects}
+		\project
+			{Hermies}{2020}
+			{\github{TrustTheVote-Project/hermes} }
+			{\href{https://osetfoundation.org/}{The OSET foundation} is rethinking voting in the digital age. I implemented a system to notify voters when there registration has changed in the government records.}
+		{Rails, AWS, Capistrano}
+	\end{projects}
 }
-
-% Uncomment the following line and use a value from 1.5cm to 2.5cm
-% \setleftcolumnlength{2.1cm}
-
-
-
-\begin{document}
-
-	\makecvheader
-
-	\input{section_experience_short}
-	\input{section_projets}
-	\input{section_interets}
-
-\end{document}
+{\begin{projects}
+	\project
+	{WARI}{2017 - 2018}
+	{\github{mseverini/WARI}}
+	{A local rock climbing non-profit was having issues coordinating it's volunteers. I built a custom app that helped crowd source much of their volunteers work and focus on value adds.}
+	{Rails, Redux, Apollo, GraphQl}
+	\end{projects}
+}
