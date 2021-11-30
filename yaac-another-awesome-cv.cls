@@ -538,3 +538,93 @@
   \end{minipage}%
 }
 
+
+
+
+% Define commands for cover letter
+% For elements of the cover letter
+\newcommand*{\lettersectionstyle}[1]{{\fontsize{14pt}{1em}\color{black}\@sectioncolor #1}}
+\newcommand*{\recipientaddressstyle}[1]{{\fontsize{9pt}{1em}\color{black} #1}}
+\newcommand*{\recipienttitlestyle}[1]{{\fontsize{11pt}{1em}\color{black} \textbf{#1}}}
+\newcommand*{\lettertitlestyle}[1]{{\fontsize{10pt}{1em}\color{black} \textbf{#1}}}
+\newcommand*{\letterdatestyle}[1]{{\fontsize{9pt}{1em}\color{black} #1}}
+\newcommand*{\lettertextstyle}{\fontsize{10pt}{1.4em}\color{black}}
+\newcommand*{\letternamestyle}[1]{{\fontsize{10pt}{1em}\color{black} #1}}
+\newcommand*{\letterenclosurestyle}[1]{{\fontsize{10pt}{1em}\color{black} #1}}
+
+
+\newcommand*{\makecvheaderright}{
+  \begin{flushright}
+  \user{\@firstname}{\@lastname}\\
+  \resumetitle{\@tagline}
+  \smallskip\\
+  \small{\@socialinfo}
+  \end{flushright}
+  \bigskip
+}
+
+\newcommand*{\recipient}[2]{\def\@recipientname{#1}\def\@recipientaddress{#2}}
+\newcommand*{\recipientname}[1]{\def\@recipientname{#1}}
+\newcommand*{\recipientaddress}[1]{\def\@recipientaddress{#1}}
+% \newcommand*{\companyname}[1]{\def\@companyname{#1}}
+
+% Defines the title for letter (cover letter only, optional)
+% Usage: \lettertitle{<title>}
+\newcommand*{\lettertitle}[1]{\def\@lettertitle{#1}}
+
+% Defines the date for letter (cover letter only)
+% Usage: \letterdate{<date>}
+\newcommand*{\letterdate}[1]{\def\@letterdate{#1}}
+
+% Defines a message of opening for letter (cover letter only)
+% Usage: \letteropening{<message>}
+\newcommand*{\letteropening}[1]{\def\@letteropening{#1}}
+
+% Defines a message of closing for letter (cover letter only)
+% Usage: \letterclosing{<message>}
+\newcommand*{\letterclosing}[1]{\def\@letterclosing{#1}}
+
+% Defines an enclosure for letter (cover letter only, optional)
+% Usage: \letterenclosure[<enclosure name>]{<enclosure>}
+\newcommand*{\letterenclname}[1][Enclosure]{\def\@letterenclname{#1}}
+\newcommand*{\letterenclosure}[2][]{%
+  % if an optional argument is provided, use it to redefine \enclname
+  \ifthenelse{\equal{#1}{}}{}{\def\@letterenclname{#1}}
+  \def\@letterenclosure{#2}
+}
+
+
+% Define a title of the cover letter
+% Usage: \makelettertitle
+\newcommand*{\makelettertitle}{%
+  \vspace{8.4mm}
+  % \setlength\tabcolsep{0pt}
+  % \setlength{\extrarowheight}{0pt}
+  \begin{minipage}{4in}
+    \recipienttitlestyle{\@recipientname}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{1.3in}
+    \letterdatestyle{\@letterdate}
+  \end{minipage}
+
+  \recipientaddressstyle{\@recipientaddress} \\\\
+  \ifthenelse{\isundefined{\@lettertitle}}
+    {}
+    {\lettertitlestyle{\@lettertitle} \\}
+  \lettertextstyle{\@letteropening\\\\}
+}
+
+% Define a closing of the cover letter
+% Usage: \makeletterclosing
+\newcommand*{\makeletterclosing}{%
+  \vspace{3.4mm}
+  \lettertextstyle{\@letterclosing} \\\\
+  \letternamestyle{\@firstname\ \@lastname}
+  \ifthenelse{\isundefined{\@letterenclosure}}
+    {\\}
+    {%
+      \\\\\\
+      \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
+    }
+}

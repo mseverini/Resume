@@ -1,0 +1,45 @@
+%! TeX program = lualatex
+\documentclass[localFont,alternative,10pt,compact]{yaac-another-awesome-cv}
+\name{Matt}{Severini}
+\tagline{Senior Fullstack Software Engineer}
+% \photo{2.5cm}{darwiin}
+\socialinfo{
+	\linkedin{matthew-severini}
+	\github{mseverini}\\
+	\smartphone{+1 631 672 2083}
+	\email{matthew.severini@gmail.com}\\
+	\address{1060 Churchill Crescent, North Vancouver, BC V7P 0C8}\\
+}
+
+\newcommand{\companyname}{Dunder Mifflin}
+
+% Uncomment the following line and use a value from 1.5cm to 2.5cm
+% \setleftcolumnlength{2.1cm}
+\recipient
+  {{\companyname} Recruitment Team}
+  {\companyname\\1600 Amphitheatre Parkway\\Mountain View, CA 94043}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for Software Engineer}
+% How the letter is opened
+\letteropening{Dear Mr./Ms./Dr. LastName,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+\letterenclosure[Attached]{Curriculum Vitae}
+
+
+
+\begin{document}
+
+	\makecvheaderright
+	\makelettertitle
+
+	\input{section_about_me}
+	\input{section_why_company}
+	\input{section_why_me}
+
+	\makeletterclosing
+
+\end{document}
