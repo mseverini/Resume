@@ -1,8 +1,6 @@
 ## Preview
 
-![Resume](resume/cv.pdf)
-
-xfun::embed_file("resume/cv.pdf")
+[Resume](resume/cv.pdf)
 
 This resume used the **YAAC: Another Awesome CV** template
 
