@@ -563,7 +563,7 @@
   \bigskip
 }
 
-\newcommand*{\recipient}[2]{\def\@recipientname{#1}\def\@recipientaddress{#2}}
+\newcommand*{\recipient}[1]{\def\@recipientname{#1}}
 \newcommand*{\recipientname}[1]{\def\@recipientname{#1}}
 \newcommand*{\recipientaddress}[1]{\def\@recipientaddress{#1}}
 % \newcommand*{\companyname}[1]{\def\@companyname{#1}}
@@ -608,7 +608,6 @@
     \letterdatestyle{\@letterdate}
   \end{minipage}
 
-  \recipientaddressstyle{\@recipientaddress} \\\\
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
     {\lettertitlestyle{\@lettertitle} \\}
