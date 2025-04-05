@@ -1,25 +1,27 @@
-"latex-workshop.view.pdf.viewer": "tab",
-    "latex- workshop.showContextMenu ": true, // right click menu
-    "latex- workshop.intellisense.package . enabled ": true, // automatically completes the command or package according to the loaded package 
+{
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.latex.recipe.default": "lualatex",
     "latex-workshop.latex.recipes": [
         {
-            "name": "latexmk",
+            "name": "lualatex",
             "tools": [
-                "latexmk"
+                "lualatex"
             ]
         },
         {
-            "name": "PDFlatex",
+            "name": "lualatex -> bibtex -> lualatex x2",
             "tools": [
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "pdflatex -> bibtex -> pdflatex2",
-            "tools": [
-                "pdflatex",
+                "lualatex",
                 "bibtex",
-                "pdflatex",
+                "lualatex",
+                "lualatex"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "tools": [
                 "pdflatex"
             ]
         },
@@ -30,27 +32,29 @@
             ]
         },
         {
-            "name": "xelatex -> bibtex -> xelatex",
+            "name": "latexmk (lualatex)",
             "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
+                "latexmk-lualatex"
             ]
         }
     ],
     "latex-workshop.latex.tools": [
         {
-            "name": "latexmk",
-            "command": "latexmk",
+            "name": "lualatex",
+            "command": "lualatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "-pdf",
-                "-outdir=%OUTDIR%",
                 "%DOC%"
-            ],
-            "env": {}
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
         },
         {
             "name": "pdflatex",
@@ -60,8 +64,7 @@
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "%DOC%"
-            ],
-            "env": {}
+            ]
         },
         {
             "name": "xelatex",
@@ -71,19 +74,22 @@
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "%DOC%"
-            ],
-            "env": {}
+            ]
         },
         {
-            "name": "bibtex",
-            "command": "bibtex",
+            "name": "latexmk-lualatex",
+            "command": "latexmk",
             "args": [
-                "%DOCFILE%"
-            ],
-            "env": {}
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-lualatex",
+                "-outdir=%OUTDIR%",
+                "%DOC%"
+            ]
         }
     ],
-    "latex- workshop.latex.clean . filetypes ": [ // sets the type of cleaning file 
+    "latex-workshop.latex.clean.filetypes": [
         "*.aux",
         "*.bbl",
         "*.blg",
@@ -106,5 +112,5 @@
         "*.nav",
         "*.snm",
         "*.synctex.gz"
-    ],
-    "latex- workshop.view.pdf . viewer ": " tab ", // PDF file 
+    ]
+}

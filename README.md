@@ -8,7 +8,6 @@ This resume used the **YAAC: Another Awesome CV** template
 
 `brew install --cask mactex-no-gui`
 Install the LaTeX Workshop vs code extension.
-copy settings from `vs_code_settings.json` into the vs code user settings file. (cmd+shift+p > Preferences: Open Settings (JSON))
 
 
 ## License
